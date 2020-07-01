@@ -13,7 +13,21 @@ class App extends Component {
     async componentDidMount() { await setJokes(this) }
 
     render() {
-        return null
+        return (
+
+            <article className='app-parent-container'>
+
+                <section className='app-title-container'>
+                    <h1>Dad Jokes</h1>
+                </section>
+
+                <section className='app-jokes-container'>
+
+                </section>
+
+            </article>
+
+        )
     }
 }
 
