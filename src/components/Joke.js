@@ -5,12 +5,13 @@ class Joke extends Component {
     render() {
 
         const { joke, likes, dislikes } = this.props
+        const vote = likes - dislikes;
 
         return (
 
             <div
 
-            >{joke}</div>
+            >Likes:{likes} Vote:{vote} Dislikes:{dislikes} Joke:{joke}</div>
 
         )
     }
