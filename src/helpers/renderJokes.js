@@ -5,9 +5,13 @@ const renderJokes = arr => {
 
     return arr.map(j => {
 
-        console.log(j)
-
-        return  <Joke />
+        return  <Joke
+                    key={j.id}
+                    id={j.id}
+                    joke={j.joke}
+                    dislikes={j.dislikes}
+                    likes={j.likes}
+                />
 
     })
 }

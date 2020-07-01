@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 
 class Joke extends Component {
-    constructor(props) {
-        super (props);
-        this.state = {
-            likes: 0,
-            dislikes: 0
-        }
-    }
 
     render() {
+
+        const { joke, likes, dislikes } = this.props
+
         return (
 
             <div
 
-            >Hello</div>
+            >{joke}</div>
 
         )
     }
