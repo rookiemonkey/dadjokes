@@ -10,10 +10,7 @@ class App extends Component {
         }
     }
 
-    async componentDidMount() {
-        const e = await setJokes(this)
-        if(e) { this.setState({ ...this.state, error: e.message }, ()=>{ console.error(e.message) }) }
-    }
+    async componentDidMount() { await setJokes(this) }
 
     render() {
         return null

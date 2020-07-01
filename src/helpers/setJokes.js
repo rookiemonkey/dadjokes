@@ -4,7 +4,7 @@ const setJokes = obj => {
     })
         .then(r => { return r.json() })
         .then(j => { obj.setState(st => { st.jokes = [...j.results] })})
-        .catch(e => { return new Error(`Error upon fetching 10 jokes ${e}`) })
+        .catch(e => { obj.setState({ ...obj.state, error: e.message })})
 }
 
 export default setJokes;
