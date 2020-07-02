@@ -14,9 +14,9 @@ class Joke extends Component {
         return (
 
             <div>
-                { renderButton('', require('../icons/like.png'), this.handleLike) }
+                { renderButton('', require('../icons/like.png'), 'like', this.handleLike) }
                 Vote:{vote}
-                { renderButton('', require('../icons/dislike.png'), this.handleDislike) }
+                { renderButton('', require('../icons/dislike.png'), 'dislike', this.handleDislike) }
                 Joke:{joke}
             </div>
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const renderButton = (text, img, clickEvent) => (
+const renderButton = (text, img, alt, clickEvent) => (
 
     <button onClick={clickEvent}>
-        {text}<img src={img}/>
+        {text}<img src={img} alt={alt}/>
     </button>
 
 )

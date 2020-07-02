@@ -1,11 +1,9 @@
-import addProperties from './addProperties';
-
 const setJokes = obj => {
-    return fetch('https://icanhazdadjoke.com/search?limit=10', {
+    return fetch(`https://icanhazdadjoke.com/search?page=${obj.state.nextPage}`, {
         headers: { 'Accept': 'application/json' }
     })
         .then(r => { return r.json() })
-        .then(j => { obj.setState(st => { st.jokes = [...addProperties(j.results)] })})
+        .then(j => { return j.results })
         .catch(e => { obj.setState({ ...obj.state, error: e.message })})
 }
 
