@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import evalVote from '../helpers/evalVote';
 import renderButton from '../helpers/renderButton';
 
 class Joke extends Component {
@@ -14,10 +15,11 @@ class Joke extends Component {
         return (
 
             <div>
-                { renderButton('', require('../icons/like.png'), 'like', this.handleLike) }
+                {renderButton('', require('../icons/like.png'), 'like', this.handleLike)}
                 Vote:{vote}
-                { renderButton('', require('../icons/dislike.png'), 'dislike', this.handleDislike) }
+                {renderButton('', require('../icons/dislike.png'), 'dislike', this.handleDislike)}
                 Joke:{joke}
+                {evalVote(vote)}
             </div>
 
         )
