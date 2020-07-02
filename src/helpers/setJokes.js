@@ -4,7 +4,7 @@ const setJokes = obj => {
     })
         .then(r => { return r.json() })
         .then(j => { return j.results })
-        .catch(e => { obj.setState({ ...obj.state, error: e.message })})
+        .catch(e => { obj.setState({ ...obj.state, error: e.message }) })
 }
 
 export default setJokes;

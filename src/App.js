@@ -18,13 +18,21 @@ class App extends Component {
         }
     }
 
-    async componentDidMount() { await setJokes(this).then(j => { handleSetJokes(this, j, true) }) }
+    async componentDidMount() {
+        await setJokes(this)
+            .then(j => { handleSetJokes(this, j, true) })
+            .catch(e => { console.error(this.state.error) })
+    };
+
+    addJokes = async () => {
+        await setJokes(this)
+            .then(j => { handleSetJokes(this, j, false) })
+            .catch(e => { console.error(this.state.error) })
+    };
 
     like = id => { handleLike(this, id) };
 
     dislike = id => { handleDislike(this, id); };
-
-    addJokes = async () => { await setJokes(this).then(j => { handleSetJokes(this, j, false) }) }
 
     render() {
         return (
@@ -33,8 +41,8 @@ class App extends Component {
 
                 <section className='app-title-container'>
                     <h1>Dad Jokes</h1>
-                    {this.state.error ? null : null}
-                    {renderButton('Add Jokes', '', '', this.addJokes)}
+                    {this.state.error ? this.state.error : null}
+                    {renderButton('Add Jokes', null, null, this.addJokes)}
                 </section>
 
                 <section className='app-jokes-container'>
