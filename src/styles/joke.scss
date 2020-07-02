@@ -1,23 +1,21 @@
 .Joke {
-    display: flex;
-    border-bottom: 2px solid #eeeeee;
-    align-items: center;
-    justify-content: center;
-    font-weight: 400;
+    box-sizing: border-box;
+    width: 100%;
     padding: 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
 }
 
 .Joke-buttons {
     display: flex;
-    margin-right: 1rem;
     align-items: center;
-    justify-content: center;
-    width: 15%;
+    width: 72px;
 }
 
 .Joke-text {
-    width: 75%;
-    font-size: 1.2rem;
+    width: 336px;
+    font-size: 1rem;
 }
 
 .Joke-votes {
