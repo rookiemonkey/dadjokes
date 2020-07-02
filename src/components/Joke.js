@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import renderButton from '../helpers/renderButton';
 
 class Joke extends Component {
 
@@ -13,9 +14,9 @@ class Joke extends Component {
         return (
 
             <div>
-                <button onClick={this.handleLike} ><img src={require('../icons/like.png')} alt='like'/></button>
+                { renderButton('', require('../icons/like.png'), this.handleLike) }
                 Vote:{vote}
-                <button onClick={this.handleDislike} ><img src={require('../icons/dislike.png')} alt='dislike'/></button>
+                { renderButton('', require('../icons/dislike.png'), this.handleDislike) }
                 Joke:{joke}
             </div>
 
