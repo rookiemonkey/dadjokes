@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import handleLike from './helpers/handleLike';
+import handleDislike from './helpers/handleDislike';
 import renderJokes from './helpers/renderJokes';
 import setJokes from './helpers/setJokes';
 
@@ -16,21 +18,9 @@ class App extends Component {
         await setJokes(this).then(() => { this.setState({ ...this.state, isLoaded: true }) })
     }
 
-    like = id => {
-        const u = this.state.jokes.map (j => {
-            if (j.id === id) { j.likes = j.likes + 1; return j }
-            else { return j }
-        })
-        console.log('UDPATED LIKES', u)
-    };
+    like = id => { handleLike(this, id) };
 
-    dislike = id => {
-        const u = this.state.jokes.map (j => {
-            if (j.id === id) { j.dislikes = j.dislikes + 1; return j }
-            else { return j }
-        })
-        console.log('UDPATED LIKES', u)
-    };
+    dislike = id => { handleDislike(this, id) };
 
     render() {
         return (
