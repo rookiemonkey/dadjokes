@@ -16,6 +16,22 @@ class App extends Component {
         await setJokes(this).then(() => { this.setState({ ...this.state, isLoaded: true }) })
     }
 
+    like = id => {
+        const u = this.state.jokes.map (j => {
+            if (j.id === id) { j.likes = j.likes + 1; return j }
+            else { return j }
+        })
+        console.log('UDPATED LIKES', u)
+    };
+
+    dislike = id => {
+        const u = this.state.jokes.map (j => {
+            if (j.id === id) { j.dislikes = j.dislikes + 1; return j }
+            else { return j }
+        })
+        console.log('UDPATED LIKES', u)
+    };
+
     render() {
         return (
 
@@ -28,7 +44,7 @@ class App extends Component {
                 <section className='app-jokes-container'>
                     {
                         this.state.isLoaded
-                            ? renderJokes(this.state.jokes)
+                            ? renderJokes(this.state.jokes, this.like, this.dislike)
                             : null
                     }
                 </section>
