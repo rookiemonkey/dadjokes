@@ -41,22 +41,27 @@ class App extends Component {
 
             <article className='app-parent-container'>
 
-                <section className='app-title-container'>
-                    <h1>Dad Jokes</h1>
-                    {this.state.error ? this.state.error : null}
-                    {
-                        this.state.isLoaded
-                            ? renderButton('Add Jokes', null, null, this.addJokes)
-                            : null
-                    }
-                </section>
+                <section className='app-jokes-list-conainter'>
 
-                <section className='app-jokes-container'>
-                    {
-                        this.state.isLoaded
-                            ? renderJokes(this.state.jokes, this.like, this.dislike)
-                            : <Loader />
-                    }
+                    <div className='app-title-container'>
+                        <h1 className='JokeList-title'><span>Dad</span> Jokes</h1>
+                        <img className='JokeList-title-image' src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' />
+                        {this.state.error ? this.state.error : null}
+                        {
+                            this.state.isLoaded
+                                ? <button onClick={this.addJokes} className='JokeList-getmore'>Add Jokes</button>
+                                : null
+                        }
+                    </div>
+
+                    <div className='app-jokes-container'>
+                        {
+                            this.state.isLoaded
+                                ? renderJokes(this.state.jokes, this.like, this.dislike)
+                                : <Loader />
+                        }
+                    </div>
+
                 </section>
 
             </article>
