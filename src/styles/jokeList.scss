@@ -1,6 +1,7 @@
 section.app-jokes-list-conainter {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 80%;
     height: 80%;
 
@@ -55,7 +56,7 @@ section.app-jokes-list-conainter {
             cursor: pointer;
             transition: 0.8s cubic-bezier(0.2, 1, 0.2, 1);
             outline: none;
-            background-color: $color-main-a4;
+            background-color: $color-main-a3;
             box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
         }
 
@@ -66,7 +67,8 @@ section.app-jokes-list-conainter {
     }
 
     div.app-jokes-container {
-        border: 5px solid $color-border;
+        background-color: whitesmoke;
+        height: 95%;
         overflow-y: scroll;
     }
 }
