@@ -24,6 +24,8 @@ class App extends Component {
             .catch(e => { console.error(this.state.error) })
     };
 
+    componentDidUpdate() { localStorage.setItem('state', JSON.stringify(this.state)) }
+
     addJokes = async () => {
         await setJokes(this)
             .then(j => { handleSetJokes(this, j, false) })
