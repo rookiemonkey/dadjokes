@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import handleSetJokes from './helpers/handleSetJokes';
 import handleLike from './helpers/handleLike';
 import handleDislike from './helpers/handleDislike';
 import renderJokes from './helpers/renderJokes';
@@ -17,32 +18,13 @@ class App extends Component {
         }
     }
 
-    async componentDidMount() {
-        await setJokes(this)
-        .then(j => {
-            this.setState({
-                ...this.state,
-                jokes: [...addProperties(j)],
-                nextPage: this.state.nextPage + 1,
-                isLoaded: true
-            })
-        })
-    }
+    async componentDidMount() { await setJokes(this).then(j => { handleSetJokes(this, j, true) }) }
 
     like = id => { handleLike(this, id) };
 
     dislike = id => { handleDislike(this, id); };
 
-    addJokes = async () => {
-        await setJokes(this)
-        .then(j => {
-            this.setState({
-                ...this.state,
-                jokes: [...this.state.jokes, ...addProperties(j)],
-                nextPage: this.state.nextPage + 1
-            })
-        })
-    }
+    addJokes = async () => { await setJokes(this).then(j => { handleSetJokes(this, j, false) }) }
 
     render() {
         return (
@@ -51,8 +33,8 @@ class App extends Component {
 
                 <section className='app-title-container'>
                     <h1>Dad Jokes</h1>
-                    { this.state.error ? null : null }
-                    { renderButton('Add Jokes', '', '', this.addJokes) }
+                    {this.state.error ? null : null}
+                    {renderButton('Add Jokes', '', '', this.addJokes)}
                 </section>
 
                 <section className='app-jokes-container'>
