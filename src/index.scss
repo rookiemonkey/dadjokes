@@ -1,9 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 $color-main: #779ECB;
 $color-main-a1: #3E5D80;
 $color-main-a2: #B0D5FF;
 $color-main-a3: #806332;
 $color-main-a4: #CCAE78;
 
-body { background-image: linear-gradient(60deg, $color-main-a3, $color-main-a4) }
+body {
+    font-family: "Rubik", sans-serif;
+    background-image: linear-gradient(
+        135deg,
+        $color-main-a3 0%,
+        $color-main-a3 50%,
+        $color-main-a4 50%,
+        $color-main-a4 100%
+    )
+}
 
-button { background-color: transparent; border: none; }
+button {
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+@import './styles/parent.scss';
+@import './styles/joke.scss';

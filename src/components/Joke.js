@@ -13,11 +13,11 @@ class Joke extends Component {
 
         return (
 
-            <div>
+            <div className='Joke Joke-text'>
                 {renderButton('', require('../icons/like.png'), 'like', this.handleLike)}
-                Vote:{votes}
+                <span className='Joke-votes'>{votes}</span>
                 {renderButton('', require('../icons/dislike.png'), 'dislike', this.handleDislike)}
-                Joke:{joke}
+                {joke}
                 {evalVote(votes)}
             </div>
 
