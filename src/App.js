@@ -42,7 +42,11 @@ class App extends Component {
                 <section className='app-title-container'>
                     <h1>Dad Jokes</h1>
                     {this.state.error ? this.state.error : null}
-                    {renderButton('Add Jokes', null, null, this.addJokes)}
+                    {
+                        this.state.isLoaded
+                            ? renderButton('Add Jokes', null, null, this.addJokes)
+                            : null
+                    }
                 </section>
 
                 <section className='app-jokes-container'>
