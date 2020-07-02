@@ -38,7 +38,7 @@ class App extends Component {
 
     render() {
 
-        const overFlow = { overflowY: this.state.isLoaded ? 'scroll' : 'none' }
+        const overFlow = { overflowY: this.state.isLoaded ? 'scroll' : 'hidden' }
 
         return (
 
@@ -51,7 +51,7 @@ class App extends Component {
                         <img className='JokeList-title-image' src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' />
                         {this.state.error ? <p className="JokeList-title-error">{this.state.error}</p> : null}
                         {
-                            this.state.isLoaded
+                            this.state.isLoaded && !this.state.error
                                 ? <button onClick={this.addJokes} className='JokeList-getmore'>Add Jokes</button>
                                 : null
                         }
