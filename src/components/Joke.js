@@ -9,17 +9,16 @@ class Joke extends Component {
 
     render() {
 
-        const { joke, likes, dislikes } = this.props
-        const vote = likes - dislikes;
+        const { joke, votes } = this.props
 
         return (
 
             <div>
                 {renderButton('', require('../icons/like.png'), 'like', this.handleLike)}
-                Vote:{vote}
+                Vote:{votes}
                 {renderButton('', require('../icons/dislike.png'), 'dislike', this.handleDislike)}
                 Joke:{joke}
-                {evalVote(vote)}
+                {evalVote(votes)}
             </div>
 
         )

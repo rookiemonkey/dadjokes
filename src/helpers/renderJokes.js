@@ -11,6 +11,7 @@ const renderJokes = (arr, like, dislike) => {
                     joke={j.joke}
                     dislikes={j.dislikes}
                     likes={j.likes}
+                    votes={j.votes}
                     like={like}
                     dislike={dislike}
                 />
