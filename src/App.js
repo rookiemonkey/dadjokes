@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import Loader from './components/Loader';
 import handleSetJokes from './helpers/handleSetJokes';
 import handleLike from './helpers/handleLike';
 import handleDislike from './helpers/handleDislike';
 import renderJokes from './helpers/renderJokes';
 import renderButton from './helpers/renderButton';
 import setJokes from './helpers/setJokes';
-import addProperties from './helpers/addProperties';
 
 class App extends Component {
     constructor(props) {
@@ -49,7 +49,7 @@ class App extends Component {
                     {
                         this.state.isLoaded
                             ? renderJokes(this.state.jokes, this.like, this.dislike)
-                            : null
+                            : <Loader />
                     }
                 </section>
 
