@@ -25,6 +25,12 @@ button {
     transition: all 0.3s;
 }
 
+svg.loader {
+    position: relative;
+    bottom: 30%;
+    transform: scale(0.25);
+}
+
 @import './styles/parent.scss';
 @import './styles/joke.scss';
 @import './styles/jokeList.scss';

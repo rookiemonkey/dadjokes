@@ -37,6 +37,7 @@ class App extends Component {
     dislike = id => { handleDislike(this, id); };
 
     render() {
+
         return (
 
             <article className='app-parent-container'>
@@ -46,7 +47,7 @@ class App extends Component {
                     <div className='app-title-container'>
                         <h1 className='JokeList-title'><span>Dad</span> Jokes</h1>
                         <img className='JokeList-title-image' src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' />
-                        {this.state.error ? this.state.error : null}
+                        <p className="JokeList-title-error">{this.state.error ? this.state.error : null}</p>
                         {
                             this.state.isLoaded
                                 ? <button onClick={this.addJokes} className='JokeList-getmore'>Add Jokes</button>

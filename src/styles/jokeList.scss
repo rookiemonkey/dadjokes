@@ -12,6 +12,7 @@ section.app-jokes-list-conainter {
         align-items: center;
         justify-content: center;
         width: 30%;
+        height: 100%;
         text-align: center;
         box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
                     0 15px 12px rgba(0, 0, 0, 0.1);
@@ -43,6 +44,11 @@ section.app-jokes-list-conainter {
             }
         }
 
+        p.JokeList-title-error {
+            color: orange;
+            font-size: 1.5rem;
+        }
+
         button.JokeList-getmore {
             font-size: 1.5rem;
             width: 50%;
@@ -69,7 +75,6 @@ section.app-jokes-list-conainter {
     div.app-jokes-container {
         background-color: whitesmoke;
         height: 95%;
-        overflow-y: scroll;
     }
 }
 
