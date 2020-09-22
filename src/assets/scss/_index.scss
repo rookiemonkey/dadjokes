@@ -6,6 +6,21 @@ $color-main-a3: #806332;
 $color-main-a4: #CCAE78;
 $color-border: $color-main-a1;
 
+// BOOTSTRAP OVERRIDE
+.container {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+
+@media (max-width: 770px) {
+    section.container-custom {
+        max-width: none !important;
+    }
+}
+
 body {
     font-family: "Rubik", sans-serif;
     background-image: linear-gradient(

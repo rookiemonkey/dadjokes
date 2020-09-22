@@ -43,25 +43,27 @@ class App extends Component {
 
             <article className='app-parent-container'>
 
-                <section className='app-jokes-list-conainter'>
+                <section className='container container-custom'>
 
-                    <div className='app-title-container'>
-                        <h1 className='JokeList-title'><span>Dad</span> Jokes</h1>
-                        <img className='JokeList-title-image' alt='' src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' />
-                        {this.state.error ? <p className="JokeList-title-error">{this.state.error}</p> : null}
-                        {
-                            this.state.isLoaded && !this.state.error
-                                ? <button onClick={this.addJokes} className='JokeList-getmore'>Add Jokes</button>
-                                : null
-                        }
-                    </div>
+                    <div className='row app-jokes-list-conainter'>
+                        <div className='app-title-container col-sm-12 col-md-12 col-lg-4'>
+                            <h1 className='JokeList-title'><span>Dad</span> Jokes</h1>
+                            <img className='JokeList-title-image' alt='' src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' />
+                            {this.state.error ? <p className="JokeList-title-error">{this.state.error}</p> : null}
+                            {
+                                this.state.isLoaded && !this.state.error
+                                    ? <button onClick={this.addJokes} className='JokeList-getmore'>Add Jokes</button>
+                                    : null
+                            }
+                        </div>
 
-                    <div className='app-jokes-container' style={overFlow}>
-                        {
-                            this.state.isLoaded
-                                ? renderJokes(this.state.jokes, this.like, this.dislike)
-                                : <Loader />
-                        }
+                        <div className='app-jokes-container col-sm-12 col-md-12 col-lg-8' style={overFlow}>
+                            {
+                                this.state.isLoaded
+                                    ? renderJokes(this.state.jokes, this.like, this.dislike)
+                                    : <Loader />
+                            }
+                        </div>
                     </div>
 
                 </section>

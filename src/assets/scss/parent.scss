@@ -4,3 +4,13 @@ article.app-parent-container {
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 1000px) {
+    article.app-parent-container {
+        height: inherit;
+    }
+
+    div.app-title-container {
+        height: 100vh !important;
+    }
+}
