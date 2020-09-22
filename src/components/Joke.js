@@ -11,17 +11,17 @@ class Joke extends Component {
     render() {
 
         const { joke, votes } = this.props
-        const b = {border: `5px solid ${setColor(votes)}`}
+        const b = { border: `5px solid ${setColor(votes)}` }
 
         return (
 
             <div className='Joke'>
 
-                {renderButton('', require('../icons/like.png'), 'like', this.handleLike)}
+                {renderButton('', require('../assets/icons/like.png'), 'like', this.handleLike)}
 
                 <span className='Joke-votes' style={b} >{votes}</span>
 
-                {renderButton('', require('../icons/dislike.png'), 'dislike', this.handleDislike)}
+                {renderButton('', require('../assets/icons/dislike.png'), 'dislike', this.handleDislike)}
 
                 <p className='Joke-text'>{joke}</p>
 

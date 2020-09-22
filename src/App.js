@@ -4,7 +4,6 @@ import handleSetJokes from './helpers/handleSetJokes';
 import handleLike from './helpers/handleLike';
 import handleDislike from './helpers/handleDislike';
 import renderJokes from './helpers/renderJokes';
-import renderButton from './helpers/renderButton';
 import setJokes from './helpers/setJokes';
 
 class App extends Component {
@@ -24,7 +23,7 @@ class App extends Component {
             .catch(e => { console.error(this.state.error) })
     };
 
-    componentDidUpdate() { if (!this.state.error) { localStorage.setItem('state', JSON.stringify(this.state)) }}
+    componentDidUpdate() { if (!this.state.error) { localStorage.setItem('state', JSON.stringify(this.state)) } }
 
     addJokes = async () => {
         await setJokes(this)
@@ -48,7 +47,7 @@ class App extends Component {
 
                     <div className='app-title-container'>
                         <h1 className='JokeList-title'><span>Dad</span> Jokes</h1>
-                        <img className='JokeList-title-image' src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' />
+                        <img className='JokeList-title-image' alt='' src='https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg' />
                         {this.state.error ? <p className="JokeList-title-error">{this.state.error}</p> : null}
                         {
                             this.state.isLoaded && !this.state.error
