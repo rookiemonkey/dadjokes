@@ -75,7 +75,22 @@ div.app-jokes-list-conainter {
         width: 753px;
         background-color: whitesmoke;
         height: 85vh;
+
+        .Joke-button-container {
+          display: flex ;
+          flex-direction: row ;
+        }
     }
+}
+
+@media (max-width: 600px) {
+  div.app-jokes-container {
+    
+    .Joke {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 
 @keyframes shake-slow {

@@ -17,11 +17,14 @@ class Joke extends Component {
 
             <div className='Joke'>
 
-                {renderButton('', require('../assets/icons/like.png'), 'like', this.handleLike)}
+                <div className='Joke-button-container'>
+                    {renderButton('', require('../assets/icons/like.png'), 'like', this.handleLike)}
 
-                <span className='Joke-votes' style={b} >{votes}</span>
+                    <span className='Joke-votes' style={b} >{votes}</span>
 
-                {renderButton('', require('../assets/icons/dislike.png'), 'dislike', this.handleDislike)}
+                    {renderButton('', require('../assets/icons/dislike.png'), 'dislike', this.handleDislike)}
+                </div>
+
 
                 <p className='Joke-text'>{joke}</p>
 
