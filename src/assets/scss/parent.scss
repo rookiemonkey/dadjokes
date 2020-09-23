@@ -10,7 +10,8 @@ article.app-parent-container {
         height: inherit;
     }
 
-    div.app-title-container {
+    div.app-title-container,
+    div.app-jokes-container {
         height: 100vh !important;
     }
 }
